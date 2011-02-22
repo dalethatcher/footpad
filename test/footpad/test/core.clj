@@ -2,5 +2,8 @@
   (:use [footpad.core] :reload)
   (:use [clojure.test]))
 
-(deftest replace-me ;; FIXME: write
-  (is false "No tests have been written."))
+(deftest three-by-three-grid-creation
+  (is (= (generate-rock 3 3)
+         '((\# \# \#)
+          (\# \# \#)
+          (\# \# \#)))))
