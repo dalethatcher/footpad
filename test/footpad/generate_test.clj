@@ -12,15 +12,15 @@
 
 (deftest adding
   (testing "Simple case"
-    (= (list \#) (add-point () (struct point 0 :rock)))
+    (= (list \#) (add-point () (struct point :rock 0)))
     )
   (testing "Padded case"
-    (= (list \space \space \#) (add-point () (struct point 2 :rock))))
+    (= (list \space \space \#) (add-point () (struct point :rock 2))))
   (testing "Pre-populated list"
-    (= (list \# \space \space \space \>) (add-point (list \#) (struct point 4 :up))))
+    (= (list \# \space \space \space \>) (add-point (list \#) (struct point :up 4))))
   )
 
 (deftest converting
   (testing "Simple case"
-    (= (list (struct point 2 :rock) (struct point 6 :up))
-       (to-points [2 :rock 6 :up]))))
+    (= (list (struct point :rock 2) (struct point :up 6))
+       (to-points [:rock 2 :up 6]))))

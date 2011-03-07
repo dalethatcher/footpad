@@ -1,6 +1,6 @@
 (ns footpad.generate)
 
-(defstruct point :xloc :type)
+(defstruct point :type :xloc :yloc)
 
 ;; Make it easier to refer to the types of characters
 ;; that we deal with.
